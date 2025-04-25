@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  background-color: rgb(124, 149, 172);
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.head {
+  background-color: rgb(8, 8, 8);
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-shadow: 5px 10px 15px white;
+}
+
+main {
+  background-color: rgb(236, 224, 207);
+  width: 50%;
+  box-shadow: 5px 5px 10px black;
+  text-align: center;
+}
+
+.divData {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .divData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+}
+
+.dataI,
+.dataF {
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  font-family: Franklin Gothic Medium ", " Arial Narrow, Arial, sans-serif;
+}
+
+input {
+  font-size: 17px;
+  background-color: rgb(219, 218, 217);
+  cursor: pointer;
+}
+
+.divRadio {
+  display: none;
+  padding: 35px;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .divRadio {
+    font-size: 15px;
+  }
+}
+
+.divValor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  margin-top: 25px;
+
+  /* Remove as setas em navegadores baseados em WebKit (Chrome, Safari, Edge) */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Remove as setas no Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@media (max-width: 700px) {
+  .divValor {
+    font-size: 15px;
+  }
+}
+
+.divButton {
+  padding-top: 10px;
+}
+
+.button {
+  cursor: pointer;
+  height: 50px;
+  font-size: 20px;
+  background-color: rgb(8, 8, 8);
+  color: white;
+}
+
+#butLimpar {
+  display: none;
+  background-color: cadetblue;
+}
+
+.divLimpar {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.divFieldset {
+  padding: 5px 10px;
+  justify-items: center;
+}
+
+fieldset {
+  display: flex;
+  border-radius: 10px;
+  gap: 30px;
+  margin: 10px;
+  background-color: rgb(219, 218, 217);
+}
+
+fieldset input {
+  cursor: pointer;
+}
+
+legend {
+  font-size: 17px;
+}
+
+@media (max-width: 700px) {
+  legend {
+    font-size: 13px;
+  }
+}
