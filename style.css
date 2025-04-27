@@ -12,7 +12,9 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   box-shadow: 5px 10px 15px white;
 }
-
+.labelTitulo {
+  font-size: 30px; 
+}
 main {
   background-color: rgb(236, 224, 207);
   width: 50%;
@@ -113,7 +115,7 @@ input {
 }
 
 .divFieldset {
-  padding: 5px 10px;
+  padding: 25px 10px;
   justify-items: center;
 }
 
