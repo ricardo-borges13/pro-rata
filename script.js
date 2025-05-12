@@ -75,6 +75,7 @@ function escolhaTipoProRata() {
     } else{
         resultDiv.style.display = 'block';
     }
+    //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
     if (resultRadDevol[1].checked){
         resultRadDevol[1].checked = false;
         resultRadDevol[0].checked = true;
