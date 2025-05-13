@@ -95,17 +95,34 @@ input {
   padding-top: 10px;
 }
 
-.button {
+.meu-botao {
   cursor: pointer;
   height: 50px;
   font-size: 20px;
   background-color: rgb(8, 8, 8);
   color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  transition: background-color 0.3s ease;
+}
+
+.meu-botao:hover {
+  background-color: rgb(6, 40, 5);
 }
 
 #butLimpar {
+  cursor: pointer;
   display: none;
-  background-color: cadetblue;
+  background-color: cadetblue;   
+  border-radius: 8px;
+  font-size: 15px;
+  height: 23px;
+  padding: 0 20px;
+}
+
+#butLimpar:hover{
+  background-color: rgb(185, 247, 247);
 }
 
 .divLimpar {
@@ -119,7 +136,7 @@ input {
   justify-items: center;
 }
 
-fieldset {
+.fieldset-personalizado {
   display: flex;
   border-radius: 10px;
   gap: 30px;
@@ -127,7 +144,8 @@ fieldset {
   background-color: rgb(219, 218, 217);
 }
 
-fieldset input {
+
+.fieldset-personalizado input {
   cursor: pointer;
 }
 
@@ -139,4 +157,15 @@ legend {
   legend {
     font-size: 13px;
   }
+}
+
+#resultDias {
+  color: rgb(2, 95, 22);
+  font-family: Arial, Helvetica, sans-serif ;
+}
+
+#resultPreco {
+  color: red;
+ font-family: Arial, Helvetica, sans-serif ;
+ font-size: 30px;
 }
