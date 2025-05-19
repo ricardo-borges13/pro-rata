@@ -1,16 +1,16 @@
 body {
   display: flex;
-  background-color: rgb(124, 149, 172);
+  background-color: rgb(173, 180, 187);
   align-items: center;
   justify-content: center;
   padding-top: 20px;
 }
 
 .head {
-  background-color: rgb(8, 8, 8);
+  background-color: #00336a;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  box-shadow: 5px 10px 15px white;
+  box-shadow: 2px 5px 15px white;
 }
 .labelTitulo {
   font-size: 30px; 
@@ -121,7 +121,7 @@ input[type="date"]:focus {
   cursor: pointer;
   height: 50px;
   font-size: 20px;
-  background-color: rgb(8, 8, 8);
+  background-color: #00336a;
   color: white;
   border: none;
   border-radius: 8px;
@@ -129,19 +129,15 @@ input[type="date"]:focus {
   transition: background-color 0.3s ease;
 }
 
-.meu-botao:hover {
-  background-color: rgb(6, 40, 5);
-}
-
   .meu-botao:active {
-    background-color:  rgb(11, 66, 9);
+    background-color:  #007bff;
     transform: scale(0.98);
   }
 
 #butLimpar {
   cursor: pointer;
   display: none;
-  background-color: cadetblue;   
+  background-color: #17a2b8;   
   border-radius: 8px;
   font-size: 15px;
   height: 23px;
