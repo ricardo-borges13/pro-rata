@@ -68,7 +68,7 @@ const limparTela = () => {
   document.getElementById("InpDataI").value = "";
   document.getElementById("InpDataF").value = "";
   document.getElementById("butLimpar").style.display = "none";
-  document.getElementById("calculo").innerHTML = "Iniciar Cálculo";
+  document.getElementById("calculo").innerHTML = "Calcular";
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {
