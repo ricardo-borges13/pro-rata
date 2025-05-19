@@ -2,6 +2,7 @@ let dias = 0;
 let inputRad = document.getElementsByName("cobranca");
 
 function calcularDiferenca() {
+  console.log('cheguei aqui')
   const resultRad = document.getElementsByName("cobranca");
   const dataInicial = new Date(document.getElementById("InpDataI").value);
   const dataFinal = new Date(document.getElementById("InpDataF").value);
@@ -45,7 +46,8 @@ function calcularDiferenca() {
 }
 
 function calculoProRata() {
-  const valorTotal = document.getElementById("valor").value;
+  console.log('console calculo pro rata')
+  const valorTotal = document.getElementById("inputValor").value;
   let result = (valorTotal / 30) * dias;
   if (result === 0) {
     document.getElementById("butLimpar").style.display = "block";
@@ -64,7 +66,7 @@ function calculoProRata() {
 const limparTela = () => {
   document.getElementById("resultPreco").innerText = ``;
   document.getElementById("resultDias").innerText = "";
-  document.getElementById("valor").value = "";
+  document.getElementById("inputValor").value = "";
   document.getElementById("InpDataI").value = "";
   document.getElementById("InpDataF").value = "";
   document.getElementById("butLimpar").style.display = "none";
@@ -78,7 +80,7 @@ const limparTela = () => {
 };
 
 function formatarDecimal() {
-  var input = document.getElementById("valor");
+  var input = document.getElementById("inputValor");
   if (input.value) {
     // Formata o valor para sempre ter 2 casas decimais
     input.value = parseFloat(input.value).toFixed(2);

@@ -46,11 +46,33 @@ main {
   font-family: Franklin Gothic Medium ", " Arial Narrow, Arial, sans-serif;
 }
 
-input {
-  font-size: 17px;
-  background-color: rgb(219, 218, 217);
-  cursor: pointer;
+input[type="date"] {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgb(217, 219, 217);
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
 }
+
+input[type="date"]:focus {
+  border-color: black; 
+  box-shadow: 0 0 0 1px black;
+}
+
+#inputValor {
+  font-size: 17px;
+  background-color: rgb(217, 219, 217);
+  cursor: pointer;
+   padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
 
 .divRadio {
   display: none;
@@ -177,12 +199,3 @@ legend {
  font-family: Arial, Helvetica, sans-serif ;
  font-size: 30px;
 }
-
-#valor {
-   padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-}
-
