@@ -24,8 +24,7 @@ main {
 
 @media (max-width: 700px) {
   main {
-    width: auto;
-    text-align: center;
+    width: auto;  
   }
 }
 
@@ -40,8 +39,9 @@ main {
   .divData {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     padding-top: 10px;
+    width: auto;  
   }
 }
 
@@ -88,7 +88,7 @@ input[type="date"]:focus {
 
 @media (max-width: 700px) {
   .divRadio {
-    font-size: 15px;
+    font-size: 15px;    
   }
 }
 
@@ -196,8 +196,20 @@ legend {
   font-family: Arial, Helvetica, sans-serif ;
 }
 
+@media (max-width: 700px) {
+  #resultDias {
+    font-size: 18px;
+  }
+}
+
 #resultPreco {
   color: red;
  font-family: Arial, Helvetica, sans-serif ;
  font-size: 30px;
+}
+
+@media (max-width: 700px) {
+  #resultPreco {
+    font-size: 20px;
+  }
 }
