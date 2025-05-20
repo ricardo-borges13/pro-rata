@@ -2,7 +2,6 @@ let dias = 0;
 let inputRad = document.getElementsByName("cobranca");
 
 function calcularDiferenca() {
-  console.log('cheguei aqui')
   const resultRad = document.getElementsByName("cobranca");
   const dataInicial = new Date(document.getElementById("InpDataI").value);
   const dataFinal = new Date(document.getElementById("InpDataF").value);
@@ -46,7 +45,6 @@ function calcularDiferenca() {
 }
 
 function calculoProRata() {
-  console.log('console calculo pro rata')
   const valorTotal = document.getElementById("inputValor").value;
   let result = (valorTotal / 30) * dias;
   if (result === 0) {
