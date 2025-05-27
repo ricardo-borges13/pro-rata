@@ -41,7 +41,7 @@ function calcularDiferenca() {
   }
   document.getElementById(
     "resultDias"
-  ).innerText = `Período de Locação:  ${dias} dias`;
+  ).innerText = `Pro rata de ${dias} dias`;
 }
 
 function calculoProRata() {

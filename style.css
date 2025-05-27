@@ -10,21 +10,26 @@ body {
   background-color: #00336a;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  box-shadow: 2px 5px 15px white;
+  box-shadow: 0 5px 1px white;
+  border-radius: 6px 6px 0 0;
 }
+
 .labelTitulo {
-  font-size: 30px; 
+  font-size: 30px;
 }
+
 main {
   background-color: rgb(236, 224, 207);
   width: 50%;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 7px 7px 10px black;
   text-align: center;
+  border-radius: 6px;
+  user-select: none;
 }
 
 @media (max-width: 700px) {
   main {
-    width: auto;  
+    width: auto;
   }
 }
 
@@ -41,7 +46,7 @@ main {
     flex-direction: column;
     gap: 15px;
     padding-top: 10px;
-    width: auto;  
+    width: auto;
   }
 }
 
@@ -56,7 +61,7 @@ main {
 input[type="date"] {
   padding: 0.6rem 0.8rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 2px solid #647383;
   border-radius: 8px;
   background-color: rgb(217, 219, 217);
   color: black;
@@ -65,7 +70,7 @@ input[type="date"] {
 }
 
 input[type="date"]:focus {
-  border-color: black; 
+  border-color: black;
   box-shadow: 0 0 0 1px black;
 }
 
@@ -73,11 +78,11 @@ input[type="date"]:focus {
   font-size: 17px;
   background-color: rgb(217, 219, 217);
   cursor: pointer;
-   padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
+  padding: 10px;
+  border: 2px solid #647383;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .divRadio {
@@ -88,7 +93,7 @@ input[type="date"]:focus {
 
 @media (max-width: 700px) {
   .divRadio {
-    font-size: 15px;    
+    font-size: 15px;
   }
 }
 
@@ -135,22 +140,22 @@ input[type="date"]:focus {
   transition: background-color 0.3s ease;
 }
 
-  .meu-botao:active {
-    background-color:  #007bff;
-    transform: scale(0.98);
-  }
+.meu-botao:active {
+  background-color: #007bff;
+  transform: scale(0.98);
+}
 
 #butLimpar {
   cursor: pointer;
   display: none;
-  background-color: #17a2b8;   
+  background-color: #17a2b8;
   border-radius: 8px;
   font-size: 15px;
   height: 23px;
   padding: 0 20px;
 }
 
-#butLimpar:hover{
+#butLimpar:hover {
   background-color: rgb(185, 247, 247);
 }
 
@@ -162,11 +167,12 @@ input[type="date"]:focus {
 
 .divFieldset {
   padding: 25px 10px;
-  justify-items: center;  
+  justify-items: center;
 }
 
 .fieldset-personalizado {
   display: flex;
+  border: 2px solid #647383;
   border-radius: 10px;
   gap: 30px;
   margin: 10px;
@@ -193,7 +199,7 @@ legend {
 
 #resultDias {
   color: rgb(2, 95, 22);
-  font-family: Arial, Helvetica, sans-serif ;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -204,12 +210,24 @@ legend {
 
 #resultPreco {
   color: red;
- font-family: Arial, Helvetica, sans-serif ;
- font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
 
 @media (max-width: 700px) {
   #resultPreco {
     font-size: 20px;
   }
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  color: #555;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
