@@ -256,8 +256,8 @@ footer {
   transform: scale(0.98); /* Efeito de clique */
 }
 
-/* #btnCopiar.copiado {
-  background-color: #4CAF50;
-  color: white;
-  border-color: #45a049;
-} */
+@media (max-width: 700px) {
+  footer {
+    display: none;
+  }
+}
