@@ -3,7 +3,7 @@ body {
   background-color: rgb(173, 180, 187);
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .head {
@@ -19,6 +19,8 @@ body {
 }
 
 main {
+   max-height: calc(100vh - 20px); /* altura total menos a altura do footer */
+  overflow-y: auto;
   background-color: rgb(236, 224, 207);
   width: 50%;
   box-shadow: 7px 7px 10px black;
@@ -222,15 +224,24 @@ legend {
 }
 
 footer {
-  position: fixed;
-  bottom: 10px;
+  position: fixed;  
   left: 0;
   width: 100%;
-  color: #555;
-  text-align: center;
+  height: 20px;
+  color: #555;  
   background-color: #f9f9f9;
-  padding: 5px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  bottom: 0px;
+  /* padding-bottom: 30px; */
+}
+
+footer small {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px; /* igual à altura do footer */
+  margin: 0;
+  
 }
 
 #btnCopiar {  
@@ -244,8 +255,7 @@ footer {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 14px;
   transition: background-color 0.3s, transform 0.1s;
-  margin: 0 auto;
-  
+  margin: 0 auto;  
 }
 
 #btnCopiar:hover {
