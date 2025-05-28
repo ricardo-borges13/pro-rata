@@ -3,7 +3,7 @@ body {
   background-color: rgb(173, 180, 187);
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .head {
@@ -39,8 +39,7 @@ main {
 .divData {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding-top: 10px;
+  gap: 40px; 
 }
 
 @media (max-width: 700px) {
@@ -89,8 +88,7 @@ input[type="date"]:focus {
 }
 
 .divRadio {
-  display: none;
-  padding: 35px;
+  display: none;  
   font-size: 20px;
 }
 
@@ -107,6 +105,7 @@ input[type="date"]:focus {
   gap: 5px;
   font-size: 20px;
   margin-top: 25px;
+ 
 
   /* Remove as setas em navegadores baseados em WebKit (Chrome, Safari, Edge) */
   input[type="number"]::-webkit-inner-spin-button,
@@ -128,7 +127,7 @@ input[type="date"]:focus {
 }
 
 .divButton {
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .meu-botao {
@@ -155,7 +154,6 @@ input[type="date"]:focus {
   border-radius: 8px;
   font-size: 15px;
   height: 23px;
-  padding: 0 20px;
 }
 
 #butLimpar:hover {
@@ -165,11 +163,11 @@ input[type="date"]:focus {
 .divLimpar {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding: 10px 0 20px 0;
 }
 
 .divFieldset {
-  padding: 25px 10px;
+  padding: 15px 10px;
   justify-items: center;
 }
 
@@ -203,6 +201,9 @@ legend {
 #resultDias {
   color: rgb(2, 95, 22);
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  
 }
 
 @media (max-width: 700px) {
@@ -214,12 +215,50 @@ legend {
 #resultPreco {
   color: red;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 30px;
 }
 
 @media (max-width: 700px) {
   #resultPreco {
     font-size: 20px;
+  }
+}
+
+.divResult small {
+  display: inline-block; 
+  margin-bottom: 10px; 
+}
+
+.divCopiar{
+  padding: 10px 0 10px 0;
+}
+
+#btnCopiar {  
+  display: none;  
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;  
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.1s;
+  margin: 0 auto;    
+}
+
+#btnCopiar:hover {
+  background-color: #e0e0e0;
+}
+
+#btnCopiar:active {
+  transform: scale(0.98); /* Efeito de clique */
+}
+
+@media (max-width: 700px) {
+  footer {
+    display: none;
   }
 }
 
@@ -242,32 +281,4 @@ footer small {
   line-height: 20px; /* igual à altura do footer */
   margin: 0;
   
-}
-
-#btnCopiar {  
-  display: none;  
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  cursor: pointer;  
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 14px;
-  transition: background-color 0.3s, transform 0.1s;
-  margin: 0 auto;  
-}
-
-#btnCopiar:hover {
-  background-color: #e0e0e0;
-}
-
-#btnCopiar:active {
-  transform: scale(0.98); /* Efeito de clique */
-}
-
-@media (max-width: 700px) {
-  footer {
-    display: none;
-  }
 }
