@@ -1,12 +1,32 @@
 let dias = 0;
+let result;
+let diaInicial;
+let mesInicial;
+let anoInicial;
+let diaFinal;
+let mesFinal;
+let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
+
+function buscarCamposDate() {
+  const dataInputInicial = document.getElementById("InpDataI").value;
+  const dataInputFinal = document.getElementById("InpDataF").value;
+  const [anoI, mesI, diaI] = dataInputInicial.split("-");
+  const [anoF, mesF, diaF] = dataInputFinal.split("-");
+  diaInicial = diaI;
+  mesInicial = mesI;
+  anoInicial = anoI;
+  diaFinal = diaF;
+  mesFinal = mesF;
+  anoFinal = anoF;  
+}
 
 function calcularDiferenca() {
   const resultRad = document.getElementsByName("cobranca");
   const dataInicial = new Date(document.getElementById("InpDataI").value);
   const dataFinal = new Date(document.getElementById("InpDataF").value);
+  buscarCamposDate();
 
-  // Verifica se as datas são válidas
   if (isNaN(dataInicial) || isNaN(dataFinal)) {
     alert("Preencha os campos Data Inicial e Data Final.");
     return;
@@ -32,6 +52,7 @@ function calcularDiferenca() {
   }
 
   calculoProRata();
+
   // Exibe o resultado
   if (dias === 1) {
     document.getElementById(
@@ -41,15 +62,15 @@ function calcularDiferenca() {
   }
   document.getElementById(
     "resultDias"
-  ).innerText = `Pro rata de ${dias} dias`;
+  ).innerText = `Período de Locação: ${dias} dias`;
 }
 
 function calculoProRata() {
   const valorTotal = document.getElementById("inputValor").value;
-  let result = (valorTotal / 30) * dias;
+  result = (valorTotal / 30) * dias;
   if (result === 0) {
     document.getElementById("butLimpar").style.display = "block";
-    document.getElementById("calculo").innerHTML = "Recalcular";
+    document.getElementById("calculo").innerHTML = "➩ Recalcular";
     document.getElementById("resultPreco").style.display = "none";
     return;
   }
@@ -58,7 +79,9 @@ function calculoProRata() {
     .toFixed(2)
     .replace(".", ",")}`;
   document.getElementById("butLimpar").style.display = "block";
-  document.getElementById("calculo").innerHTML = "Recalcular";
+  document.getElementById("calculo").innerHTML = "➩ Recalcular";
+  document.getElementById("btnCopiar").style.display = "block";
+  document.getElementById("btnCopiar").innerHTML = "📋 Copiar";
 }
 
 const limparTela = () => {
@@ -68,7 +91,9 @@ const limparTela = () => {
   document.getElementById("InpDataI").value = "";
   document.getElementById("InpDataF").value = "";
   document.getElementById("butLimpar").style.display = "none";
-  document.getElementById("calculo").innerHTML = "Calcular";
+  document.getElementById("calculo").innerHTML = "➩ Calcular";
+  document.getElementById("btnCopiar").style.display = "none";
+  document.getElementById("btnCopiar").innerHTML = "📋 Copiar";
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {
@@ -99,3 +124,22 @@ function escolhaTipoProRata() {
     inputRad[0].checked = true;
   }
 }
+
+const botaoCopiar = document.getElementById("btnCopiar");
+
+botaoCopiar.addEventListener("click", function () {
+  const textoDias = document.getElementById("resultDias").innerText;
+  const textoPreco = document.getElementById("resultPreco").innerText;
+  const textoCompleto = `Valor proporcional correspondente a ${dias} dias de locação de "X" equipamentos de radiocomunicação, de ${diaInicial}/${mesInicial}/${anoInicial} a ${diaFinal}/${mesFinal}/${anoFinal} - Valor: R$ ${result
+    .toFixed(2)
+    .replace(".", ",")}`;
+
+  navigator.clipboard
+    .writeText(textoCompleto)
+    .then(() => {
+      document.getElementById("btnCopiar").innerHTML = "✔️ Copiado";
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar: ", err);
+    });
+});

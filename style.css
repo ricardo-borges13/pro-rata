@@ -25,6 +25,7 @@ main {
   text-align: center;
   border-radius: 6px;
   user-select: none;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 700px) {
@@ -231,3 +232,32 @@ footer {
   padding: 5px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
+
+#btnCopiar {  
+  display: none;  
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;  
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.1s;
+  margin: 0 auto;
+  
+}
+
+#btnCopiar:hover {
+  background-color: #e0e0e0;
+}
+
+#btnCopiar:active {
+  transform: scale(0.98); /* Efeito de clique */
+}
+
+/* #btnCopiar.copiado {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #45a049;
+} */

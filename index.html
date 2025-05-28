@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PRO-RATA</title> 
+    <title>PRO-RATA</title>
 
-       <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="money.png" type="image/x-icon" />
-    
   </head>
   <body>
     <main>
@@ -44,10 +43,10 @@
       </div>
 
       <div class="divData">
-        <div class="dataI" >
+        <div class="dataI">
           <label for="DataI"> <b>Data Inicial</b></label>
-          <input type="date" id="InpDataI"/>
-       </div>
+          <input type="date" id="InpDataI" />
+        </div>
         <div class="dataF">
           <label for="DataF"> <b>Data Final</b></label>
           <input type="date" id="InpDataF" />
@@ -81,25 +80,26 @@
 
       <div class="divButton">
         <button id="calculo" class="meu-botao" onclick="calcularDiferenca()">
-          Calcular
-        </button>       
+          ➩ Calcular 
+        </button>
       </div>
 
       <div class="divLimpar">
-        <button id="butLimpar" onclick="limparTela()">Limpar</button>
+        <button id="butLimpar" onclick="limparTela()">Limpar ✗</button>
       </div>
 
       <div>
-        <h2 id="resultDias"></h2>        
+        <h2 id="resultDias"></h2>
         <h2 id="resultPreco"></h2>
-      </div> 
+      </div>
+      
+      <button id="btnCopiar">📋 Copiar</button>     
 
     </main>
-       <footer>
-         <h5>Versão 4.0</h5>
+    <footer>
+         <h5>Versão 4.1</h5>
        </footer>
 
     <script src="script.js"></script>
   </body>
-
 </html>
