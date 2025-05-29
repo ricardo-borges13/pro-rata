@@ -229,13 +229,17 @@ legend {
   display: inline-block; 
   margin-bottom: 10px; 
 }
+.divCopiar{  
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  gap: 5px;
+  /* padding: 10px 0 10px 0; */
 
-.divCopiar{
-  padding: 10px 0 10px 0;
 }
 
-#btnCopiar {  
-  display: none;  
+.btnCopiar { 
+  display: none;     
   background-color: #f0f0f0;
   color: #333;
   padding: 8px 16px;
@@ -244,18 +248,22 @@ legend {
   cursor: pointer;  
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 14px;
-  transition: background-color 0.3s, transform 0.1s;
-  margin: 0 auto;    
+  transition: background-color 0.3s, transform 0.1s;  
 }
 
-#btnCopiar:hover {
+.btnCopiar:hover {
   background-color: #e0e0e0;
 }
 
-#btnCopiar:active {
+.btnCopiar:active {
   transform: scale(0.98); /* Efeito de clique */
 }
 
+.help{
+  display: none;
+  float: right;
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   footer {
     display: none;

@@ -31,7 +31,7 @@ function calcularDiferenca() {
     alert("Preencha os campos Data Inicial e Data Final.");
     return;
   }
-
+document.getlem
   if (dataFinal < dataInicial) {
     alert("Erro: A data final não pode ser anterior à data inicial.");
     return;
@@ -80,8 +80,9 @@ function calculoProRata() {
     .replace(".", ",")}`;
   document.getElementById("butLimpar").style.display = "block";
   document.getElementById("calculo").innerHTML = "➩ Recalcular";
-  document.getElementById("btnCopiar").style.display = "block";
-  document.getElementById("btnCopiar").innerHTML = "📋 Copiar";
+  document.querySelector('.btnCopiar').style.display = "block";
+  document.querySelector('.btnCopiar').innerHTML = "📋 Copiar";
+  document.querySelector('.help').style.display = "block";
 }
 
 const limparTela = () => {
@@ -92,8 +93,9 @@ const limparTela = () => {
   document.getElementById("InpDataF").value = "";
   document.getElementById("butLimpar").style.display = "none";
   document.getElementById("calculo").innerHTML = "➩ Calcular";
-  document.getElementById("btnCopiar").style.display = "none";
-  document.getElementById("btnCopiar").innerHTML = "📋 Copiar";
+  document.querySelector('.btnCopiar').style.display = "none";
+  document.querySelector('.btnCopiar').innerHTML = "📋 Copiar";
+  document.querySelector('.help').style.display = "none";
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {
@@ -125,7 +127,7 @@ function escolhaTipoProRata() {
   }
 }
 
-const botaoCopiar = document.getElementById("btnCopiar");
+const botaoCopiar = document.querySelector('.btnCopiar');
 
 botaoCopiar.addEventListener("click", function () {
   const textoDias = document.getElementById("resultDias").innerText;
@@ -137,7 +139,8 @@ botaoCopiar.addEventListener("click", function () {
   navigator.clipboard
     .writeText(textoCompleto)
     .then(() => {
-      document.getElementById("btnCopiar").innerHTML = "✔️ Copiado";
+      document.querySelector('.btnCopiar').innerHTML = "✔️ Copiado";
+      
     })
     .catch((err) => {
       console.error("Erro ao copiar: ", err);
