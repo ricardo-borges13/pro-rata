@@ -146,3 +146,14 @@ botaoCopiar.addEventListener("click", function () {
       console.error("Erro ao copiar: ", err);
     });
 });
+
+const tooltip = document.getElementById('tooltip');
+function toggleTooltip() {
+    tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('help')) {
+      tooltip.style.display = 'none';
+    }
+  });
