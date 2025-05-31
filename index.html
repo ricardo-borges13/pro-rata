@@ -9,38 +9,39 @@
     <link rel="icon" href="money.png" type="image/x-icon" />
   </head>
   <body>
-    <main>
-      <div class="head">
+    <div class="wrapper">
+      <header class="header-container">
         <img src="Logo Datron-BRANCO.png" alt="Logo" height="110" />
         <div>
           <label class="labelTitulo">Cálculo Pro Rata</label>
         </div>
-      </div>
+      </header>
 
-      <div class="divFieldset">
-        <fieldset class="fieldset-personalizado">
-          <legend><b>Escolha o Tipo de Pro Rata</b></legend>
-          <label class="labelImput">
-            <input
-              type="radio"
-              name="tipoPR"
-              value="aditivo"
-              onclick="escolhaTipoProRata()"
-              checked
-            />
-            Aditivo
-          </label>
-          <label class="labelImput">
-            <input
-              type="radio"
-              name="tipoPR"
-              value="devolucao"
-              onclick="escolhaTipoProRata()"
-            />
-            Devolução
-          </label>
-        </fieldset>
-      </div>
+      <main class="main-container">
+        <div class="divFieldset">
+          <fieldset class="fieldset-personalizado">
+            <legend><b>Escolha o Tipo de Pro Rata</b></legend>
+            <label class="labelImput">
+              <input
+                type="radio"
+                name="tipoPR"
+                value="aditivo"
+                onclick="escolhaTipoProRata()"
+                checked
+              />
+              Aditivo
+            </label>
+            <label class="labelImput">
+              <input
+                type="radio"
+                name="tipoPR"
+                value="devolucao"
+                onclick="escolhaTipoProRata()"
+              />
+              Devolução
+            </label>             
+          </fieldset>
+        </div>
 
       <div class="divData">
         <div class="dataI">
@@ -97,13 +98,13 @@
         <button class="btnCopiar">📋 Copiar</button>  
         <span class="help" onclick="toggleTooltip()" title="Este botão copia automaticamente os dados de período e valor, que serão incluídos na fatura do cliente.">❔</span>   
         <div id="tooltip" class="tooltip">Este botão copia automaticamente os dados de período e valor, que serão incluídos na fatura do cliente.</div>
-      </div>
-      
-
+      </div>      
+    </div>
     </main>
+
     <footer>
-         <small>Versão 4.6</small>
-       </footer>
+      <small>Versão 4.7</small>
+    </footer>
 
     <script src="script.js"></script>
   </body>

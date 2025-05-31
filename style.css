@@ -6,19 +6,7 @@ body {
   padding-top: 30px;
 }
 
-.head {
-  background-color: #00336a;
-  color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  box-shadow: 0 5px 1px white;
-  border-radius: 6px 6px 0 0;
-}
-
-.labelTitulo {
-  font-size: 30px;
-}
-
-main {
+.wrapper {
    max-height: calc(100vh - 20px); /* altura total menos a altura do footer */
   overflow-y: auto;
   background-color: rgb(236, 224, 207);
@@ -31,10 +19,23 @@ main {
 }
 
 @media (max-width: 700px) {
-  main {
+  .wrapper {
     width: auto;
   }
 }
+
+.header-container {
+  background-color: #00336a;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-shadow: 0 5px 1px white;
+  border-radius: 6px 6px 0 0;
+}
+
+.labelTitulo {
+  font-size: 30px;
+}
+
 
 .divData {
   display: flex;
