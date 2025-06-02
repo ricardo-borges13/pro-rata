@@ -7,6 +7,8 @@ let diaFinal;
 let mesFinal;
 let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
+document.getElementById('ano').textContent = new Date().getFullYear();
+
 
 function buscarCamposDate() {
   const dataInputInicial = document.getElementById("InpDataI").value;
