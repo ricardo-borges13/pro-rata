@@ -205,6 +205,11 @@ legend {
   font-size: 1.5em;  
 }
 
+#spanDias {
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 700px) {
   #resultDias {
     font-size: 18px;
@@ -215,7 +220,7 @@ legend {
   color: red;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 30px; 
 }
 
 @media (max-width: 700px) {
@@ -302,3 +307,4 @@ footer small {
   line-height: 20px; /* igual à altura do footer */
   margin: 0;  
 }
+

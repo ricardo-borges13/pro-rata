@@ -7,8 +7,7 @@ let diaFinal;
 let mesFinal;
 let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
-document.getElementById('ano').textContent = new Date().getFullYear();
-
+document.getElementById("ano").textContent = new Date().getFullYear();
 
 function buscarCamposDate() {
   const dataInputInicial = document.getElementById("InpDataI").value;
@@ -20,7 +19,7 @@ function buscarCamposDate() {
   anoInicial = anoI;
   diaFinal = diaF;
   mesFinal = mesF;
-  anoFinal = anoF;  
+  anoFinal = anoF;
 }
 
 function calcularDiferenca() {
@@ -33,7 +32,7 @@ function calcularDiferenca() {
     alert("Preencha os campos Data Inicial e Data Final.");
     return;
   }
-document.getlem
+  document.getlem;
   if (dataFinal < dataInicial) {
     alert("Erro: A data final não pode ser anterior à data inicial.");
     return;
@@ -56,15 +55,10 @@ document.getlem
   calculoProRata();
 
   // Exibe o resultado
-  if (dias === 1) {
-    document.getElementById(
-      "resultDias"
-    ).innerText = `Período de Locação:  ${dias} dia`;
-    return;
-  }
-  document.getElementById(
-    "resultDias"
-  ).innerText = `Período de Locação: ${dias} dias`;
+  const result = document.getElementById("resultDias");
+  dias === 1
+    ? result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dia </span>`
+    : result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dias </span>`;
 }
 
 function calculoProRata() {
@@ -82,9 +76,9 @@ function calculoProRata() {
     .replace(".", ",")}`;
   document.getElementById("butLimpar").style.display = "block";
   document.getElementById("calculo").innerHTML = "➩ Recalcular";
-  document.querySelector('.btnCopiar').style.display = "block";
-  document.querySelector('.btnCopiar').innerHTML = "📋 Copiar";
-  document.querySelector('.help').style.display = "block";
+  document.querySelector(".btnCopiar").style.display = "block";
+  document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
+  document.querySelector(".help").style.display = "block";
 }
 
 const limparTela = () => {
@@ -95,9 +89,9 @@ const limparTela = () => {
   document.getElementById("InpDataF").value = "";
   document.getElementById("butLimpar").style.display = "none";
   document.getElementById("calculo").innerHTML = "➩ Calcular";
-  document.querySelector('.btnCopiar').style.display = "none";
-  document.querySelector('.btnCopiar').innerHTML = "📋 Copiar";
-  document.querySelector('.help').style.display = "none";
+  document.querySelector(".btnCopiar").style.display = "none";
+  document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
+  document.querySelector(".help").style.display = "none";
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {
@@ -129,7 +123,7 @@ function escolhaTipoProRata() {
   }
 }
 
-const botaoCopiar = document.querySelector('.btnCopiar');
+const botaoCopiar = document.querySelector(".btnCopiar");
 
 botaoCopiar.addEventListener("click", function () {
   const textoDias = document.getElementById("resultDias").innerText;
@@ -141,21 +135,20 @@ botaoCopiar.addEventListener("click", function () {
   navigator.clipboard
     .writeText(textoCompleto)
     .then(() => {
-      document.querySelector('.btnCopiar').innerHTML = "✔️ Copiado";
-      
+      document.querySelector(".btnCopiar").innerHTML = "✔️ Copiado";
     })
     .catch((err) => {
       console.error("Erro ao copiar: ", err);
     });
 });
 
-const tooltip = document.getElementById('tooltip');
+const tooltip = document.getElementById("tooltip");
 function toggleTooltip() {
-    tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
-  }
+  tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
+}
 
-  document.addEventListener('click', function(e) {
-    if (!e.target.classList.contains('help')) {
-      tooltip.style.display = 'none';
-    }
-  });
+document.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("help")) {
+    tooltip.style.display = "none";
+  }
+});
