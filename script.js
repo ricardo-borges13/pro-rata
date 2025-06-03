@@ -67,9 +67,10 @@ function calculoProRata() {
   if (result === 0) {
     document.getElementById("butLimpar").style.display = "block";
     document.getElementById("calculo").innerHTML = "➩ Recalcular";
-    document.getElementById("resultPreco").style.display = "none";
+    document.getElementById("resultPreco").style.display = "none";    
     return;
   }
+  document.querySelector(".divResult").style.display = "block";
   document.getElementById("resultPreco").style.display = "block";
   document.getElementById("resultPreco").innerText = `R$ ${result
     .toFixed(2)
@@ -92,6 +93,7 @@ const limparTela = () => {
   document.querySelector(".btnCopiar").style.display = "none";
   document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
   document.querySelector(".help").style.display = "none";
+  document.querySelector(".divResult").style.display = "none";
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {
