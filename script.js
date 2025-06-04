@@ -1,4 +1,4 @@
-const versao = 5.1;
+const versao = 5.2;
 let dias = 0;
 let result;
 let diaInicial;
@@ -10,23 +10,14 @@ let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
 document.getElementById("ano").textContent = new Date().getFullYear();
 
-  // const cssLink = document.getElementById('cssLink');
-  // cssLink.href = 'style.css?v=' + new Date().getTime();
+ 
+ const cssLink = document.getElementById('css-link');
+    cssLink.href = `style.css?v=${versao}`; 
 
-  // const script = document.createElement('script');
-  // script.src = 'script.js?v=' + new Date().getTime();
-  // document.head.appendChild(script);
- const css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = `style.css?v=${versao}`;
-  document.head.appendChild(css);
-
-  const script = document.createElement('script');
-  script.src = `script.js?v=${versao}`;
-  document.body.appendChild(script);
+   const jsScript = document.getElementById('js-script');
+    jsScript.src = `script.js?v=${versao}`; 
 
   document.getElementById('markVersao').innerHTML = `Versão ${versao}`;
-
 
 function buscarCamposDate() {
   const dataInputInicial = document.getElementById("InpDataI").value;
