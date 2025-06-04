@@ -1,4 +1,4 @@
-const versao = 5.2;
+const versao = 5.3;
 let dias = 0;
 let result;
 let diaInicial;
@@ -10,14 +10,13 @@ let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
 document.getElementById("ano").textContent = new Date().getFullYear();
 
- 
- const cssLink = document.getElementById('css-link');
-    cssLink.href = `style.css?v=${versao}`; 
+const cssLink = document.getElementById("css-link");
+cssLink.href = `style.css?v=${versao}`;
 
-   const jsScript = document.getElementById('js-script');
-    jsScript.src = `script.js?v=${versao}`; 
+const jsScript = document.getElementById("js-script");
+jsScript.src = `script.js?v=${versao}`;
 
-  document.getElementById('markVersao').innerHTML = `Versão ${versao}`;
+document.getElementById("markVersao").innerHTML = `Versão ${versao}`;
 
 function buscarCamposDate() {
   const dataInputInicial = document.getElementById("InpDataI").value;
@@ -67,19 +66,25 @@ function calcularDiferenca() {
   // Exibe o resultado
   const result = document.getElementById("resultDias");
   dias === 1
-    ? result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dia </span>`
-    : result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dias </span>`;
+    ? (result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dia </span>`)
+    : (result.innerHTML = `Período de Locação: <span id='spanDias'>  ${dias} dias </span>`);
 }
 
 function calculoProRata() {
   const valorTotal = document.getElementById("inputValor").value;
   result = (valorTotal / 30) * dias;
   if (result === 0) {
+    document.querySelector(".divLimpar").style.display = "block";
+    document.querySelector(".divLimpar").classList.add("show");
     document.getElementById("butLimpar").style.display = "block";
+
     document.getElementById("calculo").innerHTML = "➩ Recalcular";
-    document.getElementById("resultPreco").style.display = "none";    
+    document.getElementById("resultPreco").style.display = "none";
+    document.querySelector(".divResult").style.display = "block";
     return;
   }
+  document.querySelector(".divLimpar").style.display = "block";
+  document.querySelector(".divLimpar").classList.add("show");
   document.querySelector(".divResult").style.display = "block";
   document.getElementById("resultPreco").style.display = "block";
   document.getElementById("resultPreco").innerText = `R$ ${result
@@ -104,6 +109,7 @@ const limparTela = () => {
   document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
   document.querySelector(".help").style.display = "none";
   document.querySelector(".divResult").style.display = "none";
+  document.querySelector(".divLimpar").classList.remove("show");
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   if (inputRad[1].checked) {

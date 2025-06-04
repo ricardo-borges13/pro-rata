@@ -3,11 +3,11 @@ body {
   background-color: rgb(173, 180, 187);
   align-items: center;
   justify-content: center;
-  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .wrapper {
-   max-height: calc(100vh - 20px); /* altura total menos a altura do footer */
+  max-height: calc(100vh - 20px); /* altura total menos a altura do footer */
   overflow-y: auto;
   background-color: rgb(236, 224, 207);
   width: 50%;
@@ -15,7 +15,13 @@ body {
   text-align: center;
   border-radius: 6px;
   user-select: none;
-  padding-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* se quiser no meio vertical também */
 }
 
 @media (max-width: 700px) {
@@ -39,7 +45,7 @@ body {
 .divData {
   display: flex;
   justify-content: center;
-  gap: 40px; 
+  gap: 40px;
 }
 
 @media (max-width: 700px) {
@@ -88,7 +94,7 @@ input[type="date"]:focus {
 }
 
 .divRadio {
-  display: none;  
+  display: none;
   font-size: 20px;
 }
 
@@ -104,7 +110,7 @@ input[type="date"]:focus {
   align-items: center;
   gap: 5px;
   font-size: 20px;
-  margin-top: 25px; 
+  margin-top: 25px;
 
   /* Remove as setas em navegadores baseados em WebKit (Chrome, Safari, Edge) */
   input[type="number"]::-webkit-inner-spin-button,
@@ -160,13 +166,16 @@ input[type="date"]:focus {
 }
 
 .divLimpar {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0 20px 0;
+  display: none;
 }
 
+/* Se a classe for visível usar essa margin */
+.divLimpar.show {
+  display: block;
+  margin: 10px 0 20px 0;
+}
 .divFieldset {
-  padding: 15px 10px;
+  margin: 15px 0 20px 0;
   justify-items: center;
 }
 
@@ -201,7 +210,7 @@ legend {
   color: rgb(2, 95, 22);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 1.5em;    
+  font-size: 1.5em;
 }
 
 #spanDias {
@@ -219,7 +228,7 @@ legend {
   color: red;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 30px; 
+  font-size: 30px;
 }
 
 @media (max-width: 700px) {
@@ -228,36 +237,36 @@ legend {
   }
 }
 
-.divResult{  
+.divResult {
   display: none;
-  border: 2px solid #4CAF50; 
-  background-color: #f0f8ff; 
-  padding: 10px;            
-  border-radius: 8px;     
+  border: 2px solid #4caf50;
+  background-color: #f0f8ff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 8px;
   width: fit-content;
   margin: 0 auto;
-  padding-bottom: 1px;  
+  margin-bottom: 10px;
 }
 
-.divCopiar{  
+.divCopiar {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
   gap: 5px;
-  padding-top: 10px;
+  margin: 10px 0 10px 0;
 }
 
-.btnCopiar { 
-  display: none;     
+.btnCopiar {
+  display: none;
   background-color: #f0f0f0;
   color: #333;
   padding: 8px 16px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  cursor: pointer;  
-  font-family: 'Segoe UI', Arial, sans-serif;
+  cursor: pointer;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
-  transition: background-color 0.3s, transform 0.1s;  
+  transition: background-color 0.3s, transform 0.1s;
 }
 
 .btnCopiar:hover {
@@ -268,7 +277,7 @@ legend {
   transform: scale(0.98); /* Efeito de clique */
 }
 
-.help{
+.help {
   display: none;
   float: right;
   cursor: pointer;
@@ -280,31 +289,30 @@ legend {
 }
 
 .tooltip {
-    display: none;
-    position: absolute;
-    top: 708px; /* sobe o tooltip */
-    left: 50%; 
-    transform: translateX(-50%);
-    background: #333;
-    color: #fff;
-    padding: 8px;
-    border-radius: 4px;
-    max-width: 200px;
-    font-size: 12px;
-    z-index: 100;
-    white-space: normal;
-  }
+  display: none;
+  position: absolute;
+  top: 708px; /* sobe o tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 200px;
+  font-size: 12px;
+  z-index: 100;
+  white-space: normal;
+}
 
 footer {
-  position: fixed;  
+  position: fixed;
   left: 0;
   width: 100%;
   height: 20px;
-  color: #555;  
+  color: #555;
   background-color: #f8f8f8;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  bottom: 0px;  
-   
+  bottom: 0px;
 }
 
 footer small {
@@ -312,6 +320,5 @@ footer small {
   text-align: center;
   font-size: 12px;
   line-height: 20px; /* igual à altura do footer */
-  margin: 0;  
+  margin: 0;
 }
-
