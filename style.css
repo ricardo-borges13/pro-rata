@@ -21,7 +21,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* se quiser no meio vertical também */
+  align-items: center; 
 }
 
 @media (max-width: 700px) {

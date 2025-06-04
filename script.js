@@ -1,4 +1,4 @@
-const versao = 5.3;
+const versao = 5.4;
 let dias = 0;
 let result;
 let diaInicial;
