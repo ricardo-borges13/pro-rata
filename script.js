@@ -1,4 +1,4 @@
-const versao = 5.4;
+const versao = 5.5;
 let dias = 0;
 let result;
 let diaInicial;
@@ -150,13 +150,24 @@ botaoCopiar.addEventListener("click", function () {
     .toFixed(2)
     .replace(".", ",")}`;
 
+   // Copia para a área de transferência
   navigator.clipboard
     .writeText(textoCompleto)
     .then(() => {
-      document.querySelector(".btnCopiar").innerHTML = "✔️ Copiado";
+      // Altera o texto do botão temporariamente
+      botaoCopiar.innerHTML = "✔️ Copiado!";
+      
+      // Retorna ao texto original após 2 segundos (2000ms)
+      setTimeout(() => {
+        botaoCopiar.innerHTML = "📋 Copiar";
+      }, 2000);
     })
     .catch((err) => {
       console.error("Erro ao copiar: ", err);
+      botaoCopiar.innerHTML = "❌ Erro";
+      setTimeout(() => {
+        botaoCopiar.innerHTML = "📋 Copiar";
+      }, 2000);
     });
 });
 

@@ -266,7 +266,7 @@ legend {
   cursor: pointer;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
-  transition: background-color 0.3s, transform 0.1s;
+  transition: all 0.3s ease;
 }
 
 .btnCopiar:hover {
@@ -274,7 +274,7 @@ legend {
 }
 
 .btnCopiar:active {
-  transform: scale(0.98); /* Efeito de clique */
+  transform: scale(0.95); /* Efeito de clique */
 }
 
 .help {
@@ -312,7 +312,7 @@ footer {
   color: #555;
   background-color: #f8f8f8;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  bottom: 0px;
+  bottom: 0;
 }
 
 footer small {
