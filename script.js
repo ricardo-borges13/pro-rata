@@ -41,7 +41,7 @@ function calcularDiferenca() {
     alert("Preencha os campos Data Inicial e Data Final.");
     return;
   }
-  document.getlem;
+  
   if (dataFinal < dataInicial) {
     alert("Erro: A data final não pode ser anterior à data inicial.");
     return;
@@ -78,7 +78,7 @@ function calculoProRata() {
     document.querySelector(".divLimpar").classList.add("show");
     document.getElementById("butLimpar").style.display = "block";
 
-    document.getElementById("calculo").innerHTML = "➩ Recalcular";
+    document.getElementById("calculo").innerHTML = `➩ Recalcular`;
     document.getElementById("resultPreco").style.display = "none";
     document.querySelector(".divResult").style.display = "block";
     return;
