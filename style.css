@@ -147,6 +147,10 @@ input[type="date"]:focus {
   transition: background-color 0.3s ease;
 }
 
+.meu-botao:hover {
+  background-color: #114174;
+}
+
 .meu-botao:active {
   background-color: #007bff;
   transform: scale(0.98);

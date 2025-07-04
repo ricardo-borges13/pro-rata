@@ -1,4 +1,4 @@
-const versao = 5.5;
+const versao = 5.6;
 let dias = 0;
 let result;
 let diaInicial;
@@ -38,13 +38,27 @@ function calcularDiferenca() {
   buscarCamposDate();
 
   if (isNaN(dataInicial) || isNaN(dataFinal)) {
-    alert("Preencha os campos Data Inicial e Data Final.");
+    Swal.fire({
+    title: '⚠️ Atenção!',
+    html: 'Preencha os campos <b>Data Inicial</b> e <b>Data Final</b>.',
+    // icon: 'warning',
+    confirmButtonText: 'Entendi',
+    confirmButtonColor: '#d33', 
+    timer: 7000,
+    });
     return;
   }
   
   if (dataFinal < dataInicial) {
-    alert("Erro: A data final não pode ser anterior à data inicial.");
-    return;
+       Swal.fire({
+    title: '⚠️ Atenção!',
+    html: 'A <b>Data Final</b> não pode ser <u>anterior</u> à <b>Data Inicial</b>.',
+    // icon: 'warning',
+    confirmButtonText: 'Entendi',
+    confirmButtonColor: '#d33', 
+    timer: 7000,
+    });
+    
   }
   // Calcula a diferença em milissegundos
   const diferenca = Math.abs(dataFinal - dataInicial);
