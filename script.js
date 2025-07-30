@@ -58,7 +58,7 @@ function calcularDiferenca() {
     confirmButtonColor: '#d33', 
     timer: 7000,
     });
-    
+    return;
   }
   // Calcula a diferença em milissegundos
   const diferenca = Math.abs(dataFinal - dataInicial);
