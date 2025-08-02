@@ -7,7 +7,7 @@ let anoInicial;
 let diaFinal;
 let mesFinal;
 let anoFinal;
-let inputRad = document.getElementsByName("cobranca");
+const inputRad = document.getElementsByName("cobranca");
 const resultPreco = document.getElementById("resultPreco");
     const resultDias = document.getElementById("resultDias");
     const inputValor = document.getElementById("inputValor");
@@ -105,27 +105,27 @@ function calculoProRata() {
   result = (valorTotal / 30) * dias;
  
   if (result === 0) {
-    document.querySelector(".btnCopiar").style.display = "none";
-  document.querySelector(".help").style.display = "none";
-    document.querySelector(".divLimpar").classList.add("show");
-     document.getElementById("butLimpar").style.display = "block";
-    document.getElementById("calculo").innerHTML = `➩ Recalcular`;
-    document.querySelector(".divResult").style.display = "block";
-    document.getElementById("resultPreco").style.display = "none";    
+    btnCopiar.style.display = "none";
+    help.style.display = "none";
+    divLimpar.classList.add("show");
+    butLimpar.style.display = "block";
+    calculo.innerHTML = `➩ Recalcular`;
+    divResult.style.display = "block";
+    resultPreco.style.display = "none";    
     return;
   }
  
-  document.querySelector(".divLimpar").classList.add("show");
-  document.getElementById("butLimpar").style.display = "block";
-  document.getElementById("calculo").innerHTML = "➩ Recalcular";
-  document.querySelector(".divResult").style.display = "block";
-  document.getElementById("resultPreco").style.display = "block";
-  document.getElementById("resultPreco").innerText = `R$ ${result
+  divLimpar.classList.add("show");
+  butLimpar.style.display = "block";
+  calculo.innerHTML = "➩ Recalcular";
+  divResult.style.display = "block";
+  resultPreco.style.display = "block";
+  resultPreco.innerText = `R$ ${result
     .toFixed(2)
     .replace(".", ",")}`;  
   
-  document.querySelector(".btnCopiar").style.display = "block";
-  document.querySelector(".help").style.display = "block";
+  btnCopiar.style.display = "block";
+  help.style.display = "block";
 }
 
 const limparTela = () => {
