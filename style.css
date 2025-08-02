@@ -133,7 +133,7 @@ input[type="date"]:focus {
 }
 
 .divButton {
-  padding-top: 15px;
+  margin-top: 15px;
 }
 
 .meu-botao {
@@ -173,8 +173,7 @@ input[type="date"]:focus {
 .divLimpar {
   display: none;
 }
-
-/* Se a classe for visível usar essa margin */
+/* block pelo CSS e podendo alterar a margin após o block */
 .divLimpar.show {
   display: block;
   margin: 10px 0 20px 0;
@@ -191,19 +190,14 @@ input[type="date"]:focus {
   gap: 30px;
   margin: 10px;
   background-color: rgb(219, 218, 217);
+  input,label{
+    cursor: pointer;
+  }
+  legend{
+    font-size: 17px;    
+  }
 }
 
-.fieldset-personalizado input {
-  cursor: pointer;
-}
-
-.labelImput {
-  cursor: pointer;
-}
-
-legend {
-  font-size: 17px;
-}
 
 @media (max-width: 700px) {
   legend {
@@ -283,7 +277,7 @@ legend {
 }
 
 .help {
-  display: none;
+  display: block;
   float: right;
   cursor: pointer;
 }
@@ -296,7 +290,7 @@ legend {
 .tooltip {
   display: none;
   position: absolute;
-  top: 708px; /* sobe o tooltip */
+  top: 719px; /* sobe o tooltip */
   left: 50%;
   transform: translateX(-50%);
   background: #333;

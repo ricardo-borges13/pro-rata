@@ -18,6 +18,13 @@ jsScript.src = `script.js?v=${versao}`;
 
 document.getElementById("markVersao").innerHTML = `Versão ${versao}`;
 
+function mudarValorInputCobranca(){
+  if (inputRad[1].checked) {
+    inputRad[1].checked = false;
+    inputRad[0].checked = true;
+}
+}
+
 function buscarCamposDate() {
   const dataInputInicial = document.getElementById("InpDataI").value;
   const dataInputFinal = document.getElementById("InpDataF").value;
@@ -66,13 +73,11 @@ function calcularDiferenca() {
   // Converte a diferença para dias
   dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
 
-  if (resultRad[0].checked) {
+  if (resultRad[0].checked) {    
     dias += 1;
   }
-  if (resultRad[1].checked) {
-    if (dias === 0) {
-      dias = 1;
-    } else dias;
+  if (resultRad[1].checked) {    
+    dias = dias === 0 ? 1 : dias;
   }
 
   calculoProRata();
@@ -87,27 +92,28 @@ function calcularDiferenca() {
 function calculoProRata() {
   const valorTotal = document.getElementById("inputValor").value;
   result = (valorTotal / 30) * dias;
+ 
   if (result === 0) {
-    document.querySelector(".divLimpar").style.display = "block";
+    document.querySelector(".btnCopiar").style.display = "none";
+  document.querySelector(".help").style.display = "none";
     document.querySelector(".divLimpar").classList.add("show");
-    document.getElementById("butLimpar").style.display = "block";
-
+     document.getElementById("butLimpar").style.display = "block";
     document.getElementById("calculo").innerHTML = `➩ Recalcular`;
-    document.getElementById("resultPreco").style.display = "none";
     document.querySelector(".divResult").style.display = "block";
+    document.getElementById("resultPreco").style.display = "none";    
     return;
   }
-  document.querySelector(".divLimpar").style.display = "block";
+ 
   document.querySelector(".divLimpar").classList.add("show");
+  document.getElementById("butLimpar").style.display = "block";
+  document.getElementById("calculo").innerHTML = "➩ Recalcular";
   document.querySelector(".divResult").style.display = "block";
   document.getElementById("resultPreco").style.display = "block";
   document.getElementById("resultPreco").innerText = `R$ ${result
     .toFixed(2)
-    .replace(".", ",")}`;
-  document.getElementById("butLimpar").style.display = "block";
-  document.getElementById("calculo").innerHTML = "➩ Recalcular";
+    .replace(".", ",")}`;  
+  
   document.querySelector(".btnCopiar").style.display = "block";
-  document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
   document.querySelector(".help").style.display = "block";
 }
 
@@ -126,10 +132,7 @@ const limparTela = () => {
   document.querySelector(".divLimpar").classList.remove("show");
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
-  if (inputRad[1].checked) {
-    inputRad[1].checked = false;
-    inputRad[0].checked = true;
-  }
+  mudarValorInputCobranca()
 };
 
 function formatarDecimal() {
@@ -149,10 +152,7 @@ function escolhaTipoProRata() {
     resultDiv.style.display = "block";
   }
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
-  if (inputRad[1].checked) {
-    inputRad[1].checked = false;
-    inputRad[0].checked = true;
-  }
+  mudarValorInputCobranca()
 }
 
 const botaoCopiar = document.querySelector(".btnCopiar");
@@ -185,11 +185,13 @@ botaoCopiar.addEventListener("click", function () {
     });
 });
 
+//Tem a função de mostrar o tooltip (help) ao clicar no ponto de interrogação
 const tooltip = document.getElementById("tooltip");
+console.log(tooltip.style)
 function toggleTooltip() {
-  tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
+  tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";   
 }
-
+// Tem a função de esconder o tooltip (help) ao clicar fora do ponto de interrogação
 document.addEventListener("click", function (e) {
   if (!e.target.classList.contains("help")) {
     tooltip.style.display = "none";
