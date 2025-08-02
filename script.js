@@ -8,6 +8,17 @@ let diaFinal;
 let mesFinal;
 let anoFinal;
 let inputRad = document.getElementsByName("cobranca");
+const resultPreco = document.getElementById("resultPreco");
+    const resultDias = document.getElementById("resultDias");
+    const inputValor = document.getElementById("inputValor");
+    const inpDataI = document.getElementById("InpDataI");
+    const inpDataF = document.getElementById("InpDataF");
+    const butLimpar =  document.getElementById("butLimpar");
+    const calculo = document.getElementById("calculo");
+    const btnCopiar = document.querySelector(".btnCopiar");
+    const help = document.querySelector(".help");
+    const divResult = document.querySelector(".divResult");
+    const divLimpar = document.querySelector(".divLimpar");
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 const cssLink = document.getElementById("css-link");
@@ -118,18 +129,17 @@ function calculoProRata() {
 }
 
 const limparTela = () => {
-  document.getElementById("resultPreco").innerText = ``;
-  document.getElementById("resultDias").innerText = "";
-  document.getElementById("inputValor").value = "";
-  document.getElementById("InpDataI").value = "";
-  document.getElementById("InpDataF").value = "";
-  document.getElementById("butLimpar").style.display = "none";
-  document.getElementById("calculo").innerHTML = "➩ Calcular";
-  document.querySelector(".btnCopiar").style.display = "none";
-  document.querySelector(".btnCopiar").innerHTML = "📋 Copiar";
-  document.querySelector(".help").style.display = "none";
-  document.querySelector(".divResult").style.display = "none";
-  document.querySelector(".divLimpar").classList.remove("show");
+  resultPreco.innerText = ``;
+  resultDias.innerText = "";
+  inputValor.value = "";
+  inpDataI.value = "";
+  inpDataF.value = "";
+  butLimpar.style.display = "none";
+  calculo.innerHTML = "➩ Calcular";
+  btnCopiar.style.display = "none";
+  help.style.display = "none";
+  divResult.style.display = "none";
+  divLimpar.classList.remove("show");
 
   //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
   mudarValorInputCobranca()

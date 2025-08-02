@@ -277,9 +277,12 @@ input[type="date"]:focus {
 }
 
 .help {
-  display: block;
-  float: right;
+  display: none;
+  background-color:rgb(156, 194, 243);
+  border-radius: 50px;
   cursor: pointer;
+  font-size: 22px;
+  margin-left: 8px;  
 }
 @media (max-width: 700px) {
   footer {
