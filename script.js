@@ -1,4 +1,4 @@
-const versao = 5.6;
+const versao = 5.7;
 let dias = 0;
 let result;
 let diaInicial;
@@ -9,16 +9,16 @@ let mesFinal;
 let anoFinal;
 const inputRad = document.getElementsByName("cobranca");
 const resultPreco = document.getElementById("resultPreco");
-    const resultDias = document.getElementById("resultDias");
-    const inputValor = document.getElementById("inputValor");
-    const inpDataI = document.getElementById("InpDataI");
-    const inpDataF = document.getElementById("InpDataF");
-    const butLimpar =  document.getElementById("butLimpar");
-    const calculo = document.getElementById("calculo");
-    const btnCopiar = document.querySelector(".btnCopiar");
-    const help = document.querySelector(".help");
-    const divResult = document.querySelector(".divResult");
-    const divLimpar = document.querySelector(".divLimpar");
+const resultDias = document.getElementById("resultDias");
+const inputValor = document.getElementById("inputValor");
+const inpDataI = document.getElementById("InpDataI");
+const inpDataF = document.getElementById("InpDataF");
+const butLimpar = document.getElementById("butLimpar");
+const calculo = document.getElementById("calculo");
+const btnCopiar = document.querySelector(".btnCopiar");
+const help = document.querySelector(".help");
+const divResult = document.querySelector(".divResult");
+
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 const cssLink = document.getElementById("css-link");
@@ -29,11 +29,11 @@ jsScript.src = `script.js?v=${versao}`;
 
 document.getElementById("markVersao").innerHTML = `Versão ${versao}`;
 
-function mudarValorInputCobranca(){
+function mudarValorInputCobranca() {
   if (inputRad[1].checked) {
     inputRad[1].checked = false;
     inputRad[0].checked = true;
-}
+  }
 }
 
 function buscarCamposDate() {
@@ -57,24 +57,24 @@ function calcularDiferenca() {
 
   if (isNaN(dataInicial) || isNaN(dataFinal)) {
     Swal.fire({
-    title: '⚠️ Atenção!',
-    html: 'Preencha os campos <b>Data Inicial</b> e <b>Data Final</b>.',
-    // icon: 'warning',
-    confirmButtonText: 'Entendi',
-    confirmButtonColor: '#d33', 
-    timer: 7000,
+      title: "⚠️ Atenção!",
+      html: "Preencha os campos <b>Data Inicial</b> e <b>Data Final</b>.",
+      // icon: 'warning',
+      confirmButtonText: "Entendi",
+      confirmButtonColor: "#d33",
+      timer: 7000,
     });
     return;
   }
-  
+
   if (dataFinal < dataInicial) {
-       Swal.fire({
-    title: '⚠️ Atenção!',
-    html: 'A <b>Data Final</b> não pode ser <u>anterior</u> à <b>Data Inicial</b>.',
-    // icon: 'warning',
-    confirmButtonText: 'Entendi',
-    confirmButtonColor: '#d33', 
-    timer: 7000,
+    Swal.fire({
+      title: "⚠️ Atenção!",
+      html: "A <b>Data Final</b> não pode ser <u>anterior</u> à <b>Data Inicial</b>.",
+      // icon: 'warning',
+      confirmButtonText: "Entendi",
+      confirmButtonColor: "#d33",
+      timer: 7000,
     });
     return;
   }
@@ -84,10 +84,10 @@ function calcularDiferenca() {
   // Converte a diferença para dias
   dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
 
-  if (resultRad[0].checked) {    
+  if (resultRad[0].checked) {
     dias += 1;
   }
-  if (resultRad[1].checked) {    
+  if (resultRad[1].checked) {
     dias = dias === 0 ? 1 : dias;
   }
 
@@ -102,51 +102,40 @@ function calcularDiferenca() {
 
 function calculoProRata() {
   const valorTotal = document.getElementById("inputValor").value;
-  result = (valorTotal / 30) * dias;
- 
+  result = valorTotal * dias / 30;
+
   if (result === 0) {
     btnCopiar.style.display = "none";
     help.style.display = "none";
-    divLimpar.classList.add("show");
-    butLimpar.style.display = "block";
     calculo.innerHTML = `➩ Recalcular`;
     divResult.style.display = "block";
-    resultPreco.style.display = "none";    
+    resultPreco.style.display = "none";
     return;
   }
- 
-  divLimpar.classList.add("show");
-  butLimpar.style.display = "block";
+
   calculo.innerHTML = "➩ Recalcular";
   divResult.style.display = "block";
   resultPreco.style.display = "block";
-  resultPreco.innerText = `R$ ${result
-    .toFixed(2)
-    .replace(".", ",")}`;  
-  
+  resultPreco.innerText = `R$ ${result.toFixed(2).replace(".", ",")}`;
   btnCopiar.style.display = "block";
   help.style.display = "block";
 }
 
 const limparTela = () => {
-  resultPreco.innerText = ``;
+  resultPreco.innerText = "";
   resultDias.innerText = "";
   inputValor.value = "";
   inpDataI.value = "";
   inpDataF.value = "";
-  butLimpar.style.display = "none";
   calculo.innerHTML = "➩ Calcular";
   btnCopiar.style.display = "none";
   help.style.display = "none";
   divResult.style.display = "none";
-  divLimpar.classList.remove("show");
-
-  //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
-  mudarValorInputCobranca()
+  mudarValorInputCobranca();
 };
 
 function formatarDecimal() {
-  var input = document.getElementById("inputValor");
+  const input = document.getElementById("inputValor");
   if (input.value) {
     // Formata o valor para sempre ter 2 casas decimais
     input.value = parseFloat(input.value).toFixed(2);
@@ -154,33 +143,26 @@ function formatarDecimal() {
 }
 
 function escolhaTipoProRata() {
-  let resultDiv = document.getElementById("cobrado");
-  let radio = document.querySelector('input[name="tipoPR"]:checked').value;
-  if (radio === "aditivo") {
-    resultDiv.style.display = "none";
-  } else {
-    resultDiv.style.display = "block";
-  }
-  //Sempre que o usuário mudar de "devolução" para "Aditivo" o "SIM" ficar marcado.
-  mudarValorInputCobranca()
+  const resultDiv = document.getElementById("cobrado");
+  const radio = document.querySelector('input[name="tipoPR"]:checked').value;
+  resultDiv.style.display = radio === "aditivo" ? "none" : "block";
+  mudarValorInputCobranca();
 }
 
 const botaoCopiar = document.querySelector(".btnCopiar");
 
 botaoCopiar.addEventListener("click", function () {
-  const textoDias = document.getElementById("resultDias").innerText;
-  const textoPreco = document.getElementById("resultPreco").innerText;
   const textoCompleto = `Valor proporcional correspondente a ${dias} dias de locação de "X" equipamentos de radiocomunicação, de ${diaInicial}/${mesInicial}/${anoInicial} a ${diaFinal}/${mesFinal}/${anoFinal} - Valor: R$ ${result
     .toFixed(2)
     .replace(".", ",")}`;
 
-   // Copia para a área de transferência
+  // Copia para a área de transferência
   navigator.clipboard
     .writeText(textoCompleto)
     .then(() => {
       // Altera o texto do botão temporariamente
       botaoCopiar.innerHTML = "✔️ Copiado!";
-      
+
       // Retorna ao texto original após 2 segundos (2000ms)
       setTimeout(() => {
         botaoCopiar.innerHTML = "📋 Copiar";
@@ -197,9 +179,8 @@ botaoCopiar.addEventListener("click", function () {
 
 //Tem a função de mostrar o tooltip (help) ao clicar no ponto de interrogação
 const tooltip = document.getElementById("tooltip");
-console.log(tooltip.style)
 function toggleTooltip() {
-  tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";   
+  tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
 }
 // Tem a função de esconder o tooltip (help) ao clicar fora do ponto de interrogação
 document.addEventListener("click", function (e) {

@@ -17,12 +17,11 @@ body {
   user-select: none;
 }
 
-
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 @media (max-width: 700px) {
@@ -159,11 +158,12 @@ input[type="date"]:focus {
 
 #butLimpar {
   cursor: pointer;
-  display: none;
   background-color: #17a2b8;
   border-radius: 8px;
   font-size: 15px;
   height: 23px;
+  color: white;
+  border: none;
 }
 
 #butLimpar:hover {
@@ -171,13 +171,9 @@ input[type="date"]:focus {
 }
 
 .divLimpar {
-  display: none;
+  margin-top: 10px;
 }
-/* block pelo CSS e podendo alterar a margin após o block */
-.divLimpar.show {
-  display: block;
-  margin: 10px 0 20px 0;
-}
+
 .divFieldset {
   margin: 15px 0 20px 0;
   justify-items: center;
@@ -190,14 +186,14 @@ input[type="date"]:focus {
   gap: 30px;
   margin: 10px;
   background-color: rgb(219, 218, 217);
-  input,label{
+  input,
+  label {
     cursor: pointer;
   }
-  legend{
-    font-size: 17px;    
+  legend {
+    font-size: 17px;
   }
 }
-
 
 @media (max-width: 700px) {
   legend {
@@ -243,7 +239,7 @@ input[type="date"]:focus {
   padding: 5px 10px 5px 10px;
   border-radius: 8px;
   width: fit-content;
-  margin: 0 auto;
+  margin: 10px auto;
   margin-bottom: 10px;
 }
 
@@ -278,11 +274,11 @@ input[type="date"]:focus {
 
 .help {
   display: none;
-  background-color:rgb(156, 194, 243);
+  background-color: rgb(156, 194, 243);
   border-radius: 50px;
   cursor: pointer;
   font-size: 22px;
-  margin-left: 8px;  
+  margin-left: 8px;
 }
 @media (max-width: 700px) {
   footer {
