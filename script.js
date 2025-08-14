@@ -1,4 +1,4 @@
-const versao = 5.7;
+const versao = 5.8;
 let dias = 0;
 let result;
 let diaInicial;
@@ -152,9 +152,17 @@ function escolhaTipoProRata() {
 const botaoCopiar = document.querySelector(".btnCopiar");
 
 botaoCopiar.addEventListener("click", function () {
-  const textoCompleto = `Valor proporcional correspondente a ${dias} dias de locação de "X" equipamentos de radiocomunicação, de ${diaInicial}/${mesInicial}/${anoInicial} a ${diaFinal}/${mesFinal}/${anoFinal} - Valor: R$ ${result
+let textoCompleto;
+
+  inputRad[0].checked === true ? textoCompleto = `Valor proporcional correspondente a ${dias} dias de locação de "X" equipamentos de radiocomunicação, de ${diaInicial}/${mesInicial}/${anoInicial} a ${diaFinal}/${mesFinal}/${anoFinal} - Valor: R$ ${result
     .toFixed(2)
-    .replace(".", ",")}`;
+    .replace(".", ",")}`
+    :
+    textoCompleto = `Valor proporcional correspondente a ${dias} dias de locação de "X" equipamentos de radiocomunicação, de ${diaInicial}/${mesInicial}/${anoInicial} a ${diaFinal-1}/${mesFinal}/${anoFinal} - Valor: R$ ${result
+      .toFixed(2)
+      .replace(".", ",")}`;
+  
+
 
   // Copia para a área de transferência
   navigator.clipboard
